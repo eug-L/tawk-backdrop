@@ -28,6 +28,7 @@
   position: relative;
   display: inline;
   color: #03a84e;
+  font-size: 16px;
 }
 
 .tooltip .tooltiptext {

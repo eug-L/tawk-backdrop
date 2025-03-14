@@ -128,35 +128,6 @@ function build_visibility_opts_form($display_opts) {
     '#description' => t('
       Add URLs/paths to pages in which you would like to hide the widget.<br>
       Put each URL/path in a new line. Paths should have a leading \'/\'.
-      <br>
-      <div class="tooltip">
-        Examples of accepted path patterns
-        <ul class="tooltiptext">
-          <li>*</li>
-          <li>*/to/somewhere</li>
-          <li>/*/to/somewhere</li>
-          <li>/path/*/somewhere</li>
-          <li>/path/*/lead/*/somewhere</li>
-          <li>/path/*/*/somewhere</li>
-          <li>/path/to/*</li>
-          <li>/path/to/*/</li>
-          <li>*/to/*/page</li>
-          <li>/*/to/*/page</li>
-          <li>/path/*/other/*</li>
-          <li>/path/*/other/*/</li>
-          <li>http://www.example.com/</li>
-          <li>http://www.example.com/*</li>
-          <li>http://www.example.com/*/to/somewhere</li>
-          <li>http://www.example.com/path/*/somewhere</li>
-          <li>http://www.example.com/path/*/lead/*/somewhere</li>
-          <li>http://www.example.com/path/*/*/somewhere</li>
-          <li>http://www.example.com/path/to/*</li>
-          <li>http://www.example.com/path/to/*/</li>
-          <li>http://www.example.com/*/to/*/page</li>
-          <li>http://www.example.com/path/*/other/*</li>
-          <li>http://www.example.com/path/*/other/*/</li>
-        </ul>
-      </div>
     '),
     '#prefix' => '<div class="div_hide_specific">',
     '#suffix' => '</div>',
@@ -207,40 +178,38 @@ function build_visibility_opts_form($display_opts) {
     '#description' => t('
       Add URLs/paths to pages in which you would like to hide the widget.<br>
       Put each URL/path in a new line. Paths should have a leading \'/\'.
-      <br>
-      <div class="tooltip">
-        Examples of accepted path patterns
-        <ul class="tooltiptext">
-          <li>*</li>
-          <li>*/to/somewhere</li>
-          <li>/*/to/somewhere</li>
-          <li>/path/*/somewhere</li>
-          <li>/path/*/lead/*/somewhere</li>
-          <li>/path/*/*/somewhere</li>
-          <li>/path/to/*</li>
-          <li>/path/to/*/</li>
-          <li>*/to/*/page</li>
-          <li>/*/to/*/page</li>
-          <li>/path/*/other/*</li>
-          <li>/path/*/other/*/</li>
-          <li>http://www.example.com/</li>
-          <li>http://www.example.com/*</li>
-          <li>http://www.example.com/*/to/somewhere</li>
-          <li>http://www.example.com/path/*/somewhere</li>
-          <li>http://www.example.com/path/*/lead/*/somewhere</li>
-          <li>http://www.example.com/path/*/*/somewhere</li>
-          <li>http://www.example.com/path/to/*</li>
-          <li>http://www.example.com/path/to/*/</li>
-          <li>http://www.example.com/*/to/*/page</li>
-          <li>http://www.example.com/path/*/other/*</li>
-          <li>http://www.example.com/path/*/other/*/</li>
-        </ul>
-      </div>
     '),
     '#prefix' => '<div class="div_show_specific">',
     '#suffix' => '</div>',
     '#id' => t('show_oncustom'),
     '#default_value' =>  $show_oncustom_default_value,
+  );
+
+  $form['show_oncustom_examples'] = array(
+    '#type' => 'details',
+    '#summary' => t('<div class="tooltip">Examples of accepted path patterns</div>'),
+    '#details' => t('
+      <ul class="tooltiptext">
+        <li>*</li>
+        <li>*/to/somewhere</li>
+        <li>/path/*/somewhere</li>
+        <li>/path/*/lead/*/somewhere</li>
+        <li>/path/*/*/somewhere</li>
+        <li>/path/to/*</li>
+        <li>*/to/*/page</li>
+        <li>/path/*/other/*</li>
+        <li>http://www.example.com/</li>
+        <li>http://www.example.com/*</li>
+        <li>http://www.example.com/*/to/somewhere</li>
+        <li>http://www.example.com/path/*/somewhere</li>
+        <li>http://www.example.com/path/*/lead/*/somewhere</li>
+        <li>http://www.example.com/path/*/*/somewhere</li>
+        <li>http://www.example.com/path/to/*</li>
+        <li>http://www.example.com/*/to/*/page</li>
+        <li>http://www.example.com/path/*/other/*</li>
+      </ul>
+    '),
+    '#open' => false,
   );
 
   return $form;
