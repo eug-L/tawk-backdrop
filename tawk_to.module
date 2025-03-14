@@ -8,7 +8,20 @@
 
 require_once 'tawk_to.admin.inc';
 require_once 'includes/tawk_to.helper.php';
-require_once 'libraries/autoload.php';
+
+$urlUtilsFiles = [
+  'libraries/tawk/url-utils/lib/Modules/UrlPatternMatcher.php',
+  'libraries/tawk/url-utils/lib/Modules/PathPatternMatcher.php',
+  'libraries/tawk/url-utils/lib/Helpers/UrlHelper.php',
+  'libraries/tawk/url-utils/lib/Helpers/PathHelper.php',
+  'libraries/tawk/url-utils/lib/Helpers/Common.php',
+  'libraries/tawk/url-utils/lib/Models/PathPattern.php',
+  'libraries/tawk/url-utils/lib/Enums/WildcardLocation.php',
+];
+
+foreach ($urlUtilsFiles as $file) {
+  require_once $file;
+}
 
 use Tawk\Modules\UrlPatternMatcher;
 

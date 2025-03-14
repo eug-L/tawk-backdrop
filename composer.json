@@ -6,14 +6,11 @@
     "require": {
         "tawk/url-utils": "2.0.1"
     },
-    "repositories": {
-        "tawk-url-utils": {
-            "type": "vcs",
-            "url": "https://github.com/tawk/tawk-url-utils.git"
-        }
+    "config": {
+        "vendor-dir": "libraries"
     },
     "scripts": {
-        "build:prod": "COMPOSER_VENDOR_DIR=libraries composer install --no-dev",
+        "build:prod": "composer install --no-dev --no-autoloader --no-scripts",
         "package": "composer run clean && mkdir -p ./tmp/tawk_to && cp -r ./css ./tmp/tawk_to && cp -r ./includes ./tmp/tawk_to && cp -r ./js ./tmp/tawk_to && cp -r ./libraries ./tmp/tawk_to && cp ./tawk_to.* ./tmp/tawk_to && cp README.md ./tmp/tawk_to && cp LICENSE.txt ./tmp/tawk_to && (cd ./tmp && zip -9 -rq ./tawk_to.zip ./tawk_to)",
         "clean": "rm -rf ./tmp"
     }
